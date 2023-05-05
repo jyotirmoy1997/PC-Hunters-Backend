@@ -10,7 +10,7 @@ const paymentRouter = express.Router()
 
 paymentRouter.post("/", payment)
 
-paymentRouter.post('/webhook', express.raw({type: '*/*'}), async (req, res) => {
+paymentRouter.post('/webhook', async (req, res) => {
 
     console.log("Webhook Invoked")
     const sig = req.headers['stripe-signature'];
