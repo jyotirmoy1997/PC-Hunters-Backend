@@ -12,6 +12,7 @@ paymentRouter.post("/", payment)
 
 paymentRouter.post('/webhook', async (req, res) => {
 
+    console.log("Endpoint Secret :: ", endpointSecret)
     console.log("Webhook Invoked")
     const sig = req.headers['stripe-signature'];
     let event;
