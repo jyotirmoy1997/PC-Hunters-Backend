@@ -31,8 +31,8 @@ const payment = async (req, res) => {
             const session = await stripe.checkout.sessions.create({
                         payment_method_types : ['card'],
                         mode : 'payment',
-                        success_url : 'https://pc-hunters.netlify.app//payment',
-                        cancel_url : 'https://pc-hunters.netlify.app//checkout',
+                        success_url : 'https://pc-hunters.netlify.app/payment',
+                        cancel_url : 'https://pc-hunters.netlify.app/checkout',
                         customer : customer.id,
                         line_items : productsToPurchase.map((product) => {
                             return {
